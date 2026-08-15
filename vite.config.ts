@@ -6,11 +6,12 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 export default defineConfig({
   base: "/", 
   plugins: [
-    tanstackStart(),
+    // Configure the TanStack Start plugin to emit a Nitro build targeted for Vercel
+    tanstackStart({ nitro: { preset: "vercel" } }),
     react(),
     tailwindcss(),
   ],
-  resolve: {
+  resolve: { 
     tsconfigPaths: true,
   },
 });
