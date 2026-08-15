@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/assets/styles-DB4o_B8W.css" data-precedence="default"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" data-precedence="default"/><title>Staff console — Restitute Banking</title><meta name="author" content="Restitute Banking"/><meta name="theme-color" content="#0f2545"/><meta property="og:type" content="website"/><meta property="og:site_name" content="Restitute Banking"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="Restricted Restitute Banking back office for recovery staff."/><meta name="robots" content="noindex"/><meta property="og:title" content="Staff console — Restitute Banking"/><meta property="og:description" content="Restricted Restitute Banking back office."/><link rel="modulepreload" href="/assets/index-LmjUW7DF.js"/><link rel="modulepreload" href="/assets/useStore-B9WcefOa.js"/><link rel="modulepreload" href="/assets/link-XeYqOrFb.js"/><link rel="modulepreload" href="/assets/createServerFn-cfNI5Xxw.js"/><link rel="modulepreload" href="/assets/matchContext-BRN1Rnka.js"/><link rel="modulepreload" href="/assets/admin-BtaKST1V.js"/><link rel="modulepreload" href="/assets/loader-circle-Bek7o8H0.js"/><link rel="modulepreload" href="/assets/shield-check-CKqJmURg.js"/><link rel="modulepreload" href="/assets/useAuth-CQr41pU2.js"/><link rel="modulepreload" href="/assets/admin.index-CGDcPRvT.js"/><link rel="modulepreload" href="/assets/log-out-JCtAQ6ZW.js"/><link rel="modulepreload" href="/assets/AdminShell-BrDSz71g.js"/><link rel="modulepreload" href="/assets/claims-7V0aedky.js"/><link rel="modulepreload" href="/assets/format-B6qeKsoW.js"/><link rel="icon" href="/favicon.svg" type="image/svg+xml"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/></head><body><div class="page-loader" aria-hidden="true"><div class="page-loader__field"><span class="page-loader__mote" style="top:14%;left:20%;width:4px;height:4px;animation-delay:0s;animation-duration:3.2s"></span><span class="page-loader__mote" style="top:24%;left:76%;width:5px;height:5px;animation-delay:0.15s;animation-duration:3.6s"></span><span class="page-loader__mote" style="top:40%;left:12%;width:3px;height:3px;animation-delay:0.3s;animation-duration:2.8s"></span><span class="page-loader__mote" style="top:52%;left:86%;width:4px;height:4px;animation-delay:0.45s;animation-duration:3.4s"></span><span class="page-loader__mote" style="top:66%;left:24%;width:4px;height:4px;animation-delay:0.6s;animation-duration:3s"></span><span class="page-loader__mote" style="top:78%;left:70%;width:5px;height:5px;animation-delay:0.75s;animation-duration:3.8s"></span><span class="page-loader__mote" style="top:18%;left:50%;width:3px;height:3px;animation-delay:0.9s;animation-duration:2.6s"></span><span class="page-loader__mote" style="top:60%;left:50%;width:4px;height:4px;animation-delay:1.05s;animation-duration:3.5s"></span></div><div class="page-loader__stage"><div class="page-loader__spinner" aria-hidden="true"><span class="page-loader__comet page-loader__comet--a"></span><span class="page-loader__comet page-loader__comet--b"></span><span class="page-loader__core"></span></div><div class="page-loader__wordmark"><span class="page-loader__wordmark-fill">Restitute Banking</span><span class="page-loader__wordmark-ghost" aria-hidden="true">Restitute Banking</span></div></div><style>
+        .page-loader {
+          position: fixed;
+          inset: 0;
+          z-index: 9999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: radial-gradient(circle at 50% 42%, color-mix(in srgb, var(--primary) 16%, transparent) 0%, color-mix(in srgb, var(--ink) 38%, transparent) 70%);
+          backdrop-filter: blur(6px) saturate(1.1);
+          -webkit-backdrop-filter: blur(6px) saturate(1.1);
+          opacity: 1;
+          transition: opacity 300ms ease, transform 300ms ease, backdrop-filter 300ms ease;
+          pointer-events: none;
+          overflow: hidden;
+        }
+
+        .page-loader--exit {
+          opacity: 0;
+          transform: scale(1.02);
+          backdrop-filter: blur(0px) saturate(1);
+          -webkit-backdrop-filter: blur(0px) saturate(1);
+        }
+
+        .page-loader__field {
+          position: absolute;
+          inset: 0;
+        }
+
+        .page-loader__mote {
+          position: absolute;
+          border-radius: 9999px;
+          background: var(--action);
+          opacity: 0;
+          animation-name: page-loader-drift;
+          animation-timing-function: ease-in-out;
+          animation-iteration-count: infinite;
+          filter: blur(0.5px);
+        }
+
+        .page-loader__stage {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1.6rem;
+        }
+
+        .page-loader__spinner {
+          position: relative;
+          width: 96px;
+          height: 96px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .page-loader__comet {
+          position: absolute;
+          inset: 0;
+          border-radius: 50%;
+          -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+          mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+          background: conic-gradient(from 0deg, transparent 0deg, var(--primary) 60deg, var(--action) 130deg, transparent 200deg);
+          animation: page-loader-spin 1.1s linear infinite;
+        }
+
+        .page-loader__comet--b {
+          inset: 16px;
+          opacity: 0.55;
+          animation-duration: 1.6s;
+          animation-direction: reverse;
+        }
+
+        .page-loader__core {
+          width: 22px;
+          height: 22px;
+          border-radius: 42% 58% 60% 40% / 48% 42% 58% 52%;
+          background: radial-gradient(circle at 32% 28%, #fff, var(--action) 45%, var(--primary) 100%);
+          box-shadow: 0 0 22px color-mix(in srgb, var(--action) 65%, transparent),
+            0 0 44px color-mix(in srgb, var(--primary) 40%, transparent);
+          animation: page-loader-breathe 1.1s ease-in-out infinite,
+            page-loader-liquify 2.2s ease-in-out infinite;
+        }
+
+        .page-loader__wordmark {
+          position: relative;
+          font-family: var(--font-display);
+          font-size: clamp(1.05rem, 2.2vw, 1.6rem);
+          font-weight: 800;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+        }
+
+        .page-loader__wordmark-ghost {
+          color: color-mix(in srgb, var(--ink-foreground) 30%, transparent);
+          text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+        }
+
+        .page-loader__wordmark-fill {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          white-space: nowrap;
+          background: linear-gradient(90deg, var(--action), var(--primary));
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          filter: drop-shadow(0 1px 10px rgba(0, 0, 0, 0.25));
+          animation: page-loader-reveal 1.1s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+        }
+
+        @keyframes page-loader-spin {
+          to { transform: rotate(360deg); }
+        }
+
+        @keyframes page-loader-breathe {
+          0%, 100% { transform: scale(0.9); }
+          50% { transform: scale(1.12); }
+        }
+
+        @keyframes page-loader-liquify {
+          0%, 100% { border-radius: 42% 58% 60% 40% / 48% 42% 58% 52%; }
+          33% { border-radius: 58% 42% 45% 55% / 55% 60% 40% 45%; }
+          66% { border-radius: 48% 52% 55% 45% / 40% 48% 52% 60%; }
+        }
+
+        @keyframes page-loader-reveal {
+          0% { clip-path: inset(0 100% 0 0); }
+          45% { clip-path: inset(0 0 0 0); }
+          80% { clip-path: inset(0 0 0 0); }
+          100% { clip-path: inset(0 0 0 100%); }
+        }
+
+        @keyframes page-loader-drift {
+          0% { opacity: 0; transform: translateY(0); }
+          15% { opacity: 0.85; }
+          85% { opacity: 0.85; }
+          100% { opacity: 0; transform: translateY(-26px); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .page-loader__comet,
+          .page-loader__core,
+          .page-loader__wordmark-fill,
+          .page-loader__mote {
+            animation: none;
+          }
+          .page-loader__wordmark-fill {
+            clip-path: inset(0 0 0 0);
+          }
+        }
+      </style></div><div class="relative isolate min-h-screen"><style>
+        @keyframes rb-pulse { 0% { transform: scale(1); opacity: .9 } 50% { transform: scale(1.06); opacity: .6 } 100% { transform: scale(1); opacity: .9 } }
+        @keyframes rb-float { 0% { transform: translateY(0) } 50% { transform: translateY(-12px) } 100% { transform: translateY(0) } }
+        @keyframes rb-page-enter { 0% { opacity: 0; transform: translateY(18px); } 100% { opacity: 1; transform: translateY(0); } }
+        @keyframes rb-page-exit { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-18px); } }
+        .rb-shine { position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background-image: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0) 100%); transform: rotate(25deg); opacity: 0; transition: opacity .45s; }
+        .rb-shine-visible { opacity: 1; animation: rb-float 3.5s ease-in-out infinite; }
+        .rb-page-enter { animation: rb-page-enter 300ms ease both; }
+        .rb-page-exit { animation: rb-page-exit 300ms ease both; }
+      </style><div class="absolute inset-0 pointer-events-none overflow-hidden"><div class="absolute -right-24 -top-24 h-80 w-80 rounded-full blur-3xl" style="background:linear-gradient(135deg, rgba(59,130,246,0.22), rgba(168,85,247,0.18));opacity:0.16;animation:rb-pulse 6s ease-in-out infinite"></div><div class="absolute left-8 top-1/4 w-56 h-56 rounded-full blur-2xl" style="background:linear-gradient(135deg, rgba(16,185,129,0.12), rgba(79,70,229,0.12));animation:rb-float 8s ease-in-out infinite"></div><div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));mix-blend-mode:overlay"></div><div class="rb-shine rb-shine-visible"></div></div><div class=""><!--$--><div class="flex min-h-screen items-center justify-center bg-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader-circle h-6 w-6 animate-spin text-primary" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg></div><script>(function(a,f){let l;try{l=JSON.parse(sessionStorage.getItem(a)||"{}")}catch{return}const n=l?.[f||history.state?.__TSR_key];let c=!1;for(const t in n){const e=n[t],o=e?.scrollX,s=e?.scrollY;if(Number.isFinite(o)&&Number.isFinite(s)){if(t==="window")scrollTo(o,s),c=!0;else if(t)try{const r=document.querySelector(t);r&&(r.scrollLeft=o,r.scrollTop=s)}catch{}}}if(c)return;const i=location.hash.slice(1);if(i){const t=history.state?.__hashScrollIntoViewOptions??!0;if(t){const e=document.getElementById(i);e&&e.scrollIntoView(t)}return}scrollTo(0,0)})("tsr-scroll-restoration-v1_3");document.currentScript.remove()</script><!--/$--></div></div><section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text" aria-atomic="false" data-react-aria-top-layer="true"></section><script class="$tsr" id="$tsr-stream-barrier">(self.$R=self.$R||{})["tsr"]=[];self.$_TSR={h(){this.hydrated=!0,this.c()},e(){this.streamEnded=!0,this.c()},c(){this.hydrated&&this.streamEnded&&(delete self.$_TSR,delete self.$R.tsr)},p(e){this.initialized?e():this.buffer.push(e)},buffer:[]};$_TSR.router=($R=>$R[0]={manifest:$R[1]={routes:$R[2]={__root__:$R[3]={preloads:$R[4]=["/assets/index-LmjUW7DF.js","/assets/useStore-B9WcefOa.js","/assets/link-XeYqOrFb.js","/assets/createServerFn-cfNI5Xxw.js","/assets/matchContext-BRN1Rnka.js"],scripts:$R[5]=[$R[6]={attrs:$R[7]={type:"module",async:!0,src:"/assets/index-LmjUW7DF.js"}}]},"/admin":$R[8]={preloads:$R[9]=["/assets/admin-BtaKST1V.js","/assets/loader-circle-Bek7o8H0.js","/assets/shield-check-CKqJmURg.js","/assets/useAuth-CQr41pU2.js"]},"/admin/":$R[10]={preloads:$R[11]=["/assets/admin.index-CGDcPRvT.js","/assets/log-out-JCtAQ6ZW.js","/assets/AdminShell-BrDSz71g.js","/assets/claims-7V0aedky.js","/assets/format-B6qeKsoW.js"]}}},matches:$R[12]=[$R[13]={i:"__root__ ",u:1786821882968,s:"success",ssr:!0},$R[14]={i:" admin admin",u:1786821882968,s:"success",ssr:!0},$R[15]={i:" admin  admin ",u:1786821882968,s:"success",ssr:!0}],lastMatchId:" admin  admin "})($R["tsr"]);$_TSR.e();document.currentScript.remove()</script><script type="module" async="" src="/assets/index-LmjUW7DF.js"></script></body></html>

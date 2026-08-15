@@ -7,7 +7,8 @@ export default defineConfig({
   base: "/", 
   plugins: [
     // Configure the TanStack Start plugin to emit a Nitro build targeted for Vercel
-    tanstackStart({ nitro: { preset: "vercel" } }),
+    // Cast to `any` because the plugin's TypeScript types don't expose the `nitro` option.
+    tanstackStart({ nitro: { preset: "vercel" } } as any),
     react(),
     tailwindcss(),
   ],
